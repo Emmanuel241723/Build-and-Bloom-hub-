@@ -1,0 +1,5 @@
+import type {Metadata} from "next";import Link from "next/link";import {posts,fmt} from "@/lib/data";import BlogExplorer from "@/components/BlogExplorer";
+export const metadata:Metadata={title:"Blog",description:"All articles on budgeting, saving, side hustles and online income.",alternates:{canonical:"/blog"}};
+export default function Blog(){const f=posts[0];return(<div className="mx-auto max-w-6xl px-5 py-12"><h1 className="text-5xl mb-8">The Blog</h1>
+<Link href={`/blog/${f.slug}`} className={`block ${f.tone} rounded-3xl p-8 md:p-12 mb-10`}><p className="text-sm font-medium text-forest">Featured · {f.category}</p><h2 className="text-4xl md:text-5xl mt-2 max-w-2xl">{f.title}</h2><p className="mt-3 max-w-xl">{f.excerpt}</p><p className="text-xs mt-3">{fmt(f.date)}, {f.read} min read</p></Link>
+<BlogExplorer posts={posts}/></div>)}
