@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@theme{--color-sage:#8da38a;--color-forest:#2f4a3a;--color-cream:#faf6ee;--color-beige:#ece3d3;--color-mist:#dfe8da;--color-ink:#2b2d2b;
+--font-serif:var(--font-cormorant),Georgia,serif;--font-sans:var(--font-dm),system-ui,sans-serif}
+body{background:var(--color-cream);color:var(--color-ink);font-family:var(--font-sans)}
+h1,h2,h3{font-family:var(--font-serif);color:var(--color-forest);line-height:1.1}
+:focus-visible{outline:2px solid var(--color-forest);outline-offset:3px}
+.prose-bb p{margin:0 0 1.25rem;line-height:1.8;font-size:1.0625rem;max-width:68ch}
+.prose-bb h2{font-size:2rem;margin:2.5rem 0 1rem}
