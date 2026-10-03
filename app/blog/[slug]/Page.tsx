@@ -1,10 +1,25 @@
-import type {Metadata} from "next";import Link from "next/link";import {notFound} from "next/navigation";import {posts,getPost,fmt,catSlug,SITE} from "@/lib/data";import SocialShare from "@/components/SocialShare";import AuthorSection from "@/components/AuthorSection";import Newsletter from "@/components/Newsletter";import BlogCard from "@/components/BlogCard";
+import type {Metadata} from "next";
+import Link from "next/link";
+import {notFound} from "next/navigation";
+import {posts,getPost,fmt,catSlug,SITE} from "@/lib/data";
+import SocialShare from "@/components/SocialShare";
+import AuthorSection from "@/components/AuthorSection";
+import Newsletter from "@/components/Newsletter";
+import BlogCard from "@/components/BlogCard";
 type Props={params:Promise<{slug:string}>};
 export const generateStaticParams=()=>posts.map(p=>({slug:p.slug}));
-export async function generateMetadata({params}:Props):Promise<Metadata>{const p=getPost((await params).slug);if(!p)return{};
+export async function generateMetadata({params}:Props):Promise<Metadata>{
+const {slug}=await params;
+const p=getPost(slug);
+if(!p)return{};
 return{title:p.title,description:p.excerpt,alternates:{canonical:`/blog/${p.slug}`},openGraph:{title:p.title,description:p.excerpt,type:"article",publishedTime:p.date,url:`/blog/${p.slug}`},twitter:{card:"summary_large_image",title:p.title,description:p.excerpt}}}
-export default async function Post({params}:Props){const p=getPost((await params).slug);if(!p)notFound();
-const i=posts.indexOf(p);const prev=posts[i-1],next=posts[i+1];const related=posts.filter(x=>x.category===p.category&&x!==p).concat(posts.filter(x=>x.category!==p.category&&x!==p)).slice(0,3);
+export default async function Post({params}:Props){
+const {slug}=await params;
+const p=getPost(slug);
+if(!p)notFound();
+const i=posts.indexOf(p);
+const prev=posts[i-1],next=posts[i+1];
+const related=posts.filter(x=>x.category===p.category&&x!==p).concat(posts.filter(x=>x.category!==p.category&&x!==p)).slice(0,3);
 const ld={"@context":"https://schema.org","@type":"Article",headline:p.title,description:p.excerpt,datePublished:p.date,author:{"@type":"Person",name:"Build & Bloom Hub"},mainEntityOfPage:`${SITE.url}/blog/${p.slug}`};
 return(<article className="mx-auto max-w-3xl px-5 py-10"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(ld)}}/>
 <nav aria-label="Breadcrumb" className="text-sm text-ink/60"><Link href="/">Home</Link> / <Link href="/blog">Blog</Link> / <Link href={`/category/${catSlug(p.category)}`}>{p.category}</Link></nav>
