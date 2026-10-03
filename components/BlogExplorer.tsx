@@ -1,6 +1,7 @@
 "use client";
 import {useMemo,useState} from "react";
-import {Post,categories} from "@/lib/data";import BlogCard from "@/components/BlogCard";
+import {Post,categories} from "@/lib/data";
+import BlogCard from "@/components/BlogCard";
 export default function BlogExplorer({posts}:{posts:Post[]}){const [q,setQ]=useState("");const [cat,setCat]=useState("All");const [n,setN]=useState(6);
 const list=useMemo(()=>posts.filter(p=>(cat==="All"||p.category===cat)&&(p.title+" "+p.excerpt).toLowerCase().includes(q.toLowerCase())),[posts,q,cat]);
 return(<div><label htmlFor="s" className="sr-only">Search articles</label>
