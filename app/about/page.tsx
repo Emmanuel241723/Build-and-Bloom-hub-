@@ -20,7 +20,7 @@ export default function About(){return(<div className="mx-auto max-w-3xl px-5 py
 <p>I explain things in plain words. I will tell you when something is hard, when it takes time, and when an idea is mostly hype. I will not shame you for how you spend, and I will never promise you quick riches.</p>
 <p>Every article ends with one thing you can do today. Start there.</p>
 <h2>Who this is for</h2>
-<p>This is for you if you are just starting out, living paycheck to paycheck, paying off debt, or looking for extra income. It is for women who want more control, more choices and more peace around money.</p>
+<p>This is for you if you are just starting out, living paycheck to paycheck, paying off debt, or looking for extra income. It is for everyone who want more control, more choices and more peace around money.</p>
 <h2>A quick note</h2>
 <p>Everything here is general information, not personal financial advice. Your situation is your own, so check the details that matter with a qualified professional. Some links may be affiliate links, and I will always say so.</p>
 </div>
