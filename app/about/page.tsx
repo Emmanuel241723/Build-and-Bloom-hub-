@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata:Metadata={title:"About",description:"Why Build & Bloom Hub exists, who it is for, and how we talk about money.",alternates:{canonical:"/about"}};
 export default function About(){return(<div className="mx-auto max-w-3xl px-5 py-12">
 <h1 className="text-5xl">Hi, I'm glad you're here.</h1>
-<p className="mt-4 text-xl text-ink/75 max-w-xl">Build &amp; Bloom Hub is a place for practical budgeting, saving strategies and real income ideas, for women building financial freedom one decision at a time.</p>
+<p className="mt-4 text-xl text-ink/75 max-w-xl">Build &amp; Bloom Hub is a place for practical budgeting, saving strategies and real income ideas, for everyone building financial freedom one decision at a time.</p>
 <div className="aspect-[4/3] bg-mist rounded-3xl mt-8 flex items-center justify-center text-forest" role="img" aria-label="Profile photo placeholder">Your photo here</div>
 <div className="prose-bb mt-8">
 <h2>A little about me</h2>
