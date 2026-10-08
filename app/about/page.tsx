@@ -6,6 +6,11 @@ export default function About(){return(<div className="mx-auto max-w-3xl px-5 py
 <p className="mt-4 text-xl text-ink/75 max-w-xl">Build &amp; Bloom Hub is a place for practical budgeting, saving strategies and real income ideas, for women building financial freedom one decision at a time.</p>
 <div className="aspect-[4/3] bg-mist rounded-3xl mt-8 flex items-center justify-center text-forest" role="img" aria-label="Profile photo placeholder">Your photo here</div>
 <div className="prose-bb mt-8">
+<h2>A little about me</h2>
+<p>I'm Sarah R. Smith, and I live in the United States.</p>
+<p>I'm not a financial adviser, and I won't pretend to be. I write the way I'd talk to a friend over coffee: plainly, with real numbers, and without judgement about where you're starting from.</p>
+<p>Build &amp; Bloom Hub is where I share practical ideas about budgeting, saving and earning a little extra. Some posts are step-by-step guides. Others are honest looks at side hustles and tools, including where they fall short.</p>
+<p>If something here helps, or doesn't, I'd love to hear about it. You can reach me any time through the contact page.</p>
 <h2>Why this blog exists</h2>
 <p>Most money advice made me feel behind. It was full of jargon, strict rules and people who seemed to have it all figured out. If you have ever closed an article feeling worse than when you opened it, this blog is meant to be the opposite.</p>
 <p>Here, money is not a test you pass or fail. It is a skill you build slowly, with small steps and honest numbers.</p>
