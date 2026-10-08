@@ -23,7 +23,7 @@ const related=posts.filter(x=>x.category===p.category&&x!==p).concat(posts.filte
 const ld={"@context":"https://schema.org","@type":"Article",headline:p.title,description:p.excerpt,datePublished:p.date,author:{"@type":"Person",name:"Build & Bloom Hub"},mainEntityOfPage:`${SITE.url}/blog/${p.slug}`};
 return(<article className="mx-auto max-w-3xl px-5 py-10"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(ld)}}/>
 <nav aria-label="Breadcrumb" className="text-sm text-ink/60"><Link href="/">Home</Link> / <Link href="/blog">Blog</Link> / <Link href={`/category/${catSlug(p.category)}`}>{p.category}</Link></nav>
-<h1 className="text-4xl md:text-6xl mt-4">{p.title}</h1><p className="mt-3 text-sm text-ink/60">By Build &amp; Bloom Hub, {fmt(p.date)}, {p.read} min read</p>
+<h1 className="text-4xl md:text-6xl mt-4">{p.title}</h1><p className="mt-3 text-sm text-ink/60">By Sarah R. Smith, {fmt(p.date)}, {p.read} min read</p>
 <div className={`${p.tone} aspect-[16/9] rounded-2xl mt-6`} role="img" aria-label={p.title}/>
 <div className="prose-bb mt-8"><p className="text-xl">{p.excerpt}</p>{p.body.map(s=><section key={s.h}><h2>{s.h}</h2>{s.p.map((t,k)=><p key={k}>{t}</p>)}{s.tip&&<aside className="rounded-xl bg-mist border-l-4 border-forest p-4 mb-5"><strong>Tip: </strong>{s.tip}</aside>}</section>)}</div>
 <SocialShare slug={p.slug} title={p.title}/><AuthorSection/><p className="text-xs text-ink/60 mt-6">This article is for general information and is not financial advice. It may contain affiliate links.</p>
